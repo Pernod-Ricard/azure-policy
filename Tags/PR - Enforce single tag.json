@@ -1,0 +1,21 @@
+{
+  "mode": "indexed",
+  "policyRule": {
+    "if": {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "false"
+    },
+    "then": {
+      "effect": "audit"
+    }
+  },
+  "parameters": {
+    "tagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "tagName",
+        "description": "Name of a mandatory tag"
+      }
+    }
+  }
+}
